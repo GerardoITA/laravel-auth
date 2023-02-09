@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/* Route::middleware(['auth', 'verified'])
+    ->name('private.')
+    ->group('private')
+    ->group(function () {
+        Route::get('/', [ProfileController::class, 'priv']);
+}); */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
