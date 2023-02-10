@@ -21,7 +21,17 @@
 
 <div class="content">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
+      <h1>Projects</h1>
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        @foreach ($projects as $project)
+          <div class="card col-6 d-flex flex-column align-items-center justify-content-center">
+            <h4>{{$project -> name}}</h4>
+            <img src="{{$project -> mainImage}}" alt="{{$project -> name}}">
+            <p>{{$project -> description}}</p>
+            <a href="{{$project -> repoLink}}">Github Link</a>
+          </div>
+      @endforeach
+      </div>
     </div>
 </div>
 @endsection
