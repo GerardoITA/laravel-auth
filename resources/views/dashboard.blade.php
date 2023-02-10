@@ -18,6 +18,7 @@
         </div>
     </div>
     <h1>Projects</h1>
+    <h6><a href="/dashboard/create">Create a project</a></h6>
       <div class="d-flex flex-column align-items-center justify-content-center">
         @foreach ($projects as $project)
           <div class="card col-6 d-flex flex-column align-items-center justify-content-center">
@@ -25,8 +26,13 @@
             <img src="{{$project -> mainImage}}" alt="{{$project -> name}}">
             <p>{{$project -> description}}</p>
             <a href="{{$project -> repoLink}}">Github Link</a>
+            <div class="d-flex gap-1">
+                <a href="/project/show/{{$project -> id}}">Show</a>
+                <a href="">Edit</a>
+                <a href="/project/delete/{{$project -> id}}">Delete</a>
+            </div>
           </div>
-      @endforeach
+        @endforeach
       </div>
 </div>
 @endsection
