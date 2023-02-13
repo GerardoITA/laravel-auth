@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
 
 class MainController extends Controller
@@ -51,12 +52,12 @@ class MainController extends Controller
     {
 
         $data = $request->all();
-
+        $img_path = Storage::put('uploads', $data['mainImage']);
         $project = new Project();
 
         $project->name = $data['name'];
        /*  $project->description = $data['description']; */
-        $project->mainImage = $data['mainImage'];
+        $project->mainImage = $img_path;
         $project->releaseDate = $data['releaseDate'];
         $project->repoLink = $data['repoLink'];
 

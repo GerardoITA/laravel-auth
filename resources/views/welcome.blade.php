@@ -26,7 +26,7 @@
         @foreach ($projects as $project)
           <div class="card col-6 d-flex flex-column align-items-center justify-content-center">
             <h4>{{$project -> name}}</h4>
-            <img src="{{$project -> mainImage}}" alt="{{$project -> name}}">
+            <img src="{{asset('storage/' . $project -> mainImage)}}" alt="{{$project -> name}}">
             <p>{{$project -> description}}</p>
             <a href="{{$project -> repoLink}}">Github Link</a>
           </div>

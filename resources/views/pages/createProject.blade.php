@@ -21,7 +21,7 @@
         </div>
     </div>
     <h1>Create a new project</h1>
-    <form method="POST" action="{{ route('storeProject') }}">
+    <form method="POST" action="{{ route('storeProject') }}" enctype="multipart/form-data">
         @csrf
         <label for="name">Name</label>
         <input type="text" name="name">
@@ -30,7 +30,7 @@
         <input type="text" name="description">
         <br>
         <label for="mainImage">mainImage</label>
-        <input type="text" name="mainImage">
+        <input type="file" name="mainImage">
         <br>
         <label for="releaseDate">releaseDate</label>
         <input type="text" name="releaseDate">
